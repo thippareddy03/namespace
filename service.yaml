@@ -1,1 +1,8 @@
-h
+apiVersion: v1
+kind: Namespace
+metadata: 
+  name: qa-namespace
+  labels:
+    env: qa
+
+    # Command to create name space is kubectl create -f "yaml file name"
