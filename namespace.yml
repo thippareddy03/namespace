@@ -1,0 +1,33 @@
+### For creating namespace use the command kubectl create namespace "intended name"
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replicanamespaceexp
+  env: dev
+  namespace: qa
+spec:
+  minReadySeconds: 5
+  replicas: 3
+  selector:
+  matchLabels:
+    name: naspace
+  template:
+    metadata:
+      labels:
+        name: naspace
+    spec:
+      containers:
+        - name: nginx replicas
+          image: nginx:latest
+          ports:
+            - name: tcp
+              containerPort: 80
+              protocol: TCP
+      resources:
+        requests:
+          memory: 24M
+          cpu: 100m
+        limits:
+          memory: 128M
+          cpu: 500m
