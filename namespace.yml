@@ -30,3 +30,10 @@ spec:
         limits:
           memory: 128M
           cpu: 500m
+
+#######
+#Outut is like as below
+#qa                   replicanamespaceexp-cmb9f                 1/1     Running   0             8m30s
+#qa                   replicanamespaceexp-qcvtw                 1/1     Running   0             8m30s
+#qa                   replicanamespaceexp-w5t9d                 1/1     Running   0             8m30s
+#controlplane:~$ kubectl get pods --all-namespaces
