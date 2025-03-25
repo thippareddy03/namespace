@@ -4,21 +4,20 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: replicanamespaceexp
-  env: dev
   namespace: qa
 spec:
   minReadySeconds: 5
   replicas: 3
   selector:
-  matchLabels:
-    name: naspace
+    matchLabels:
+      name: naspace
   template:
     metadata:
       labels:
         name: naspace
     spec:
       containers:
-        - name: nginx replicas
+        - name: nginxreplicas
           image: nginx:latest
           ports:
             - name: tcp
